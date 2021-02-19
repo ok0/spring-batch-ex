@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: local
+
+spring.batch.job.names: ${job.name:NONE}
+
+---
+spring:
+  profiles: local
+  datasource:
+    hikari:
+      jdbc-url: jbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_LOCSL_ON_EXIT=FALSE
+      username: sa
+      password: sa
+      driver-class-name: org.h2.Driver
